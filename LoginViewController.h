@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "/usr/include/sqlite3.h"
+typedef NS_ENUM(NSInteger, JxbLoginShowType) {
+    JxbLoginShowType_NONE,
+    JxbLoginShowType_USER,
+    JxbLoginShowType_PASS
+};
 @interface LoginViewController : UIViewController
 @property (copy, nonatomic) NSString *databaseFilePath;
 @property(nonatomic,strong)NSArray *zhuceInfo;

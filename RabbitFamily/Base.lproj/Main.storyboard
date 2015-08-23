@@ -405,25 +405,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="用户名" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNS-Uk-wQR">
-                                <rect key="frame" x="52" y="75" width="51" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7M-Ec-4oO">
-                                <rect key="frame" x="125" y="71" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="密码" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lq-OL-zvQ">
-                                <rect key="frame" x="52" y="109" width="34" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQR-vY-pwg">
-                                <rect key="frame" x="133" y="157" width="30" height="30"/>
+                                <rect key="frame" x="129" y="360" width="30" height="30"/>
                                 <state key="normal" title="登录">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -431,14 +414,8 @@
                                     <action selector="btnLogin:" destination="ITa-Z2-gka" eventType="touchUpInside" id="sQu-i6-ezl"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZWW-zG-evI">
-                                <rect key="frame" x="125" y="105" width="97" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZSL-p0-b4n">
-                                <rect key="frame" x="183" y="157" width="30" height="30"/>
+                                <rect key="frame" x="177" y="360" width="30" height="30"/>
                                 <state key="normal" title="注册">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -451,8 +428,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="涂氏宗谱登录系统" id="hZW-qq-IYD"/>
                     <connections>
-                        <outlet property="textName" destination="B7M-Ec-4oO" id="Xmb-Sb-oHF"/>
-                        <outlet property="textPwd" destination="ZWW-zG-evI" id="JNT-HO-8RA"/>
                         <segue destination="49e-Tb-3d3" kind="push" identifier="loginseccess_segue" id="daw-uL-KjD"/>
                         <segue destination="rkw-gn-mt6" kind="push" identifier="toregister_segue" id="rp0-HU-ewo"/>
                     </connections>
