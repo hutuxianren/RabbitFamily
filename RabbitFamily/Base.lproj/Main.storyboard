@@ -192,6 +192,52 @@
             </objects>
             <point key="canvasLocation" x="1637" y="913"/>
         </scene>
+        <!--Friend Link View Controller-->
+        <scene sceneID="feB-tV-fFc">
+            <objects>
+                <viewController id="Mjy-aJ-gMw" customClass="FriendLinkViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LBf-Yo-gQp"/>
+                        <viewControllerLayoutGuide type="bottom" id="eOE-MS-ZR3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S83-bX-fzk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2S7-L3-XTF">
+                                <rect key="frame" x="77" y="82" width="75" height="30"/>
+                                <state key="normal" title="中华涂氏网">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="zhonghuatushiwangClick:" destination="Mjy-aJ-gMw" eventType="touchUpInside" id="HXj-Uo-Kn8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39r-1Y-Zqw">
+                                <rect key="frame" x="157" y="81" width="60" height="30"/>
+                                <state key="normal" title="家谱首卷">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="jiapushoujuanClick:" destination="Mjy-aJ-gMw" eventType="touchUpInside" id="mnl-sC-qo9"/>
+                                </connections>
+                            </button>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9c8-zE-oOD">
+                                <rect key="frame" x="0.0" y="124" width="320" height="444"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="5Of-2e-Ovm"/>
+                    <connections>
+                        <outlet property="webView" destination="9c8-zE-oOD" id="Kqk-yl-POn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VIE-N8-MP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2669" y="563"/>
+        </scene>
         <!--近代家谱-->
         <scene sceneID="wg7-f3-ORb">
             <objects>
@@ -251,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2467" y="340"/>
+            <point key="canvasLocation" x="2999" y="340"/>
         </scene>
         <!--世字辈-->
         <scene sceneID="Obs-g1-PfH">
@@ -301,7 +347,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2NZ-MO-4ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2818" y="338"/>
+            <point key="canvasLocation" x="3350" y="338"/>
         </scene>
         <!--序字辈-->
         <scene sceneID="1TN-NC-sFM">
@@ -328,7 +374,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="knM-lI-7ty" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="340"/>
+            <point key="canvasLocation" x="3757" y="340"/>
         </scene>
         <!--注册-->
         <scene sceneID="WVI-Ny-hsF">
@@ -451,6 +497,7 @@
                         <segue destination="IJq-UJ-Zft" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="49B-LM-eb8" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="Lfg-uU-cjc" kind="relationship" relationship="viewControllers" id="9p5-MW-gtk"/>
+                        <segue destination="Sq9-nt-bP7" kind="relationship" relationship="viewControllers" id="MAw-A2-tkj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -533,6 +580,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zwj-7U-sLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-397" y="5"/>
+        </scene>
+        <!--友情链接-->
+        <scene sceneID="9rH-uj-gB7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sq9-nt-bP7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="友情链接" id="ham-gh-eEN"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3HJ-db-E1a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Mjy-aJ-gMw" kind="relationship" relationship="rootViewController" id="7G7-fM-dVN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoV-Br-ZJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2137" y="563"/>
         </scene>
     </scenes>
     <resources>

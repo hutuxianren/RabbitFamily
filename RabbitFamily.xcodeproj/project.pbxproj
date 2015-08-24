@@ -48,6 +48,7 @@
 		F6B913A21B83551600FE41B6 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B913A11B83551600FE41B6 /* CoreTelephony.framework */; };
 		F6B913A41B83553200FE41B6 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B913A31B83553200FE41B6 /* libz.1.2.5.dylib */; };
 		F6B913A61B83553C00FE41B6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B913A51B83553C00FE41B6 /* Security.framework */; };
+		F6E2356D1B8AD6AE00852E4D /* FriendLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6E2356C1B8AD6AE00852E4D /* FriendLinkViewController.m */; };
 		F6E54CDF1B84B66B005004F0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F6E54CDE1B84B66B005004F0 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
@@ -128,6 +129,8 @@
 		F6B913A11B83551600FE41B6 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		F6B913A31B83553200FE41B6 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		F6B913A51B83553C00FE41B6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		F6E2356B1B8AD6AE00852E4D /* FriendLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendLinkViewController.h; sourceTree = "<group>"; };
+		F6E2356C1B8AD6AE00852E4D /* FriendLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendLinkViewController.m; sourceTree = "<group>"; };
 		F6E54CDE1B84B66B005004F0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -251,6 +254,8 @@
 				F6A390491B85B0C3004BD575 /* LoginViewController.m */,
 				F68459B01B85DDD700C7F57A /* RegisterViewController.h */,
 				F68459B11B85DDD700C7F57A /* RegisterViewController.m */,
+				F6E2356B1B8AD6AE00852E4D /* FriendLinkViewController.h */,
+				F6E2356C1B8AD6AE00852E4D /* FriendLinkViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -473,6 +478,7 @@
 			files = (
 				F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */,
 				F66ACC261B8074AB00E1F3E4 /* AppDelegate.m in Sources */,
+				F6E2356D1B8AD6AE00852E4D /* FriendLinkViewController.m in Sources */,
 				F6B913631B833AA900FE41B6 /* ALLhoudaiViewController.m in Sources */,
 				F66ACC4C1B80771300E1F3E4 /* FirstViewController.m in Sources */,
 				F66ACC231B8074AB00E1F3E4 /* main.m in Sources */,

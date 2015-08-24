@@ -121,8 +121,10 @@
 }
 -(void)viewWillAppear:(BOOL)animated
 {
-    txtUser.text=[_zhuceInfo objectAtIndex:0];
-    txtPwd.text=[_zhuceInfo objectAtIndex:1];
+//    txtUser.text=[_zhuceInfo objectAtIndex:0];
+//    txtPwd.text=[_zhuceInfo objectAtIndex:1];
+    txtUser.text=@"tuyixin";
+    txtPwd.text=@"123456";
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if ([textField isEqual:txtUser]) {
