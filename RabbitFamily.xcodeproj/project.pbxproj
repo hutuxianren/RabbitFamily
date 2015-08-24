@@ -19,9 +19,17 @@
 		F66ACC621B80B6A100E1F3E4 /* haiquanFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC611B80B6A100E1F3E4 /* haiquanFirstTableViewController.m */; };
 		F66ACC651B80BD0900E1F3E4 /* xuzibeiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC641B80BD0900E1F3E4 /* xuzibeiTableViewController.m */; };
 		F66ACC681B80CD0E00E1F3E4 /* genshenghoudaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */; };
+		F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */; };
 		F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F68459B11B85DDD700C7F57A /* RegisterViewController.m */; };
 		F69F6D391B857D1000CA5873 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F69F6D381B857D1000CA5873 /* test.rtf */; };
 		F6A3904A1B85B0C3004BD575 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A390491B85B0C3004BD575 /* LoginViewController.m */; };
+		F6AD782C1B8AFDFB00469596 /* PhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */; };
+		F6AD78301B8B006900469596 /* 02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F6AD782E1B8B006900469596 /* 02.jpeg */; };
+		F6AD78311B8B006900469596 /* 01.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F6AD782F1B8B006900469596 /* 01.jpeg */; };
+		F6AD784A1B8B2E7000469596 /* TWImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD783D1B8B2E7000469596 /* TWImageScrollView.m */; };
+		F6AD784B1B8B2E7000469596 /* TWPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD783F1B8B2E7000469596 /* TWPhotoCollectionViewCell.m */; };
+		F6AD784C1B8B2E7000469596 /* TWPhotoPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD78411B8B2E7000469596 /* TWPhotoPickerController.m */; };
+		F6AD784F1B8B3A1C00469596 /* 03.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F6AD784E1B8B3A1C00469596 /* 03.jpeg */; };
 		F6B913631B833AA900FE41B6 /* ALLhoudaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6B913621B833AA900FE41B6 /* ALLhoudaiViewController.m */; };
 		F6B913701B834AF100FE41B6 /* libWeiboSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F6B913651B834AF100FE41B6 /* libWeiboSDK.a */; };
 		F6B913711B834AF100FE41B6 /* WeiboSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F6B9136D1B834AF100FE41B6 /* WeiboSDK.bundle */; };
@@ -86,11 +94,24 @@
 		F66ACC641B80BD0900E1F3E4 /* xuzibeiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xuzibeiTableViewController.m; sourceTree = "<group>"; };
 		F66ACC661B80CD0E00E1F3E4 /* genshenghoudaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genshenghoudaiViewController.h; sourceTree = "<group>"; };
 		F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genshenghoudaiViewController.m; sourceTree = "<group>"; };
+		F67A33AA1B8AF78E00BA2A96 /* FamilyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyPhotoViewController.h; sourceTree = "<group>"; };
+		F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyPhotoViewController.m; sourceTree = "<group>"; };
 		F68459B01B85DDD700C7F57A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F68459B11B85DDD700C7F57A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		F69F6D381B857D1000CA5873 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
 		F6A390481B85B0C3004BD575 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F6A390491B85B0C3004BD575 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		F6AD782A1B8AFDFB00469596 /* PhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewCell.h; sourceTree = "<group>"; };
+		F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewCell.m; sourceTree = "<group>"; };
+		F6AD782E1B8B006900469596 /* 02.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 02.jpeg; sourceTree = "<group>"; };
+		F6AD782F1B8B006900469596 /* 01.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 01.jpeg; sourceTree = "<group>"; };
+		F6AD783C1B8B2E7000469596 /* TWImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWImageScrollView.h; sourceTree = "<group>"; };
+		F6AD783D1B8B2E7000469596 /* TWImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWImageScrollView.m; sourceTree = "<group>"; };
+		F6AD783E1B8B2E7000469596 /* TWPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		F6AD783F1B8B2E7000469596 /* TWPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F6AD78401B8B2E7000469596 /* TWPhotoPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TWPhotoPickerController.h; sourceTree = "<group>"; };
+		F6AD78411B8B2E7000469596 /* TWPhotoPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TWPhotoPickerController.m; sourceTree = "<group>"; };
+		F6AD784E1B8B3A1C00469596 /* 03.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03.jpeg; sourceTree = "<group>"; };
 		F6B913611B833AA900FE41B6 /* ALLhoudaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALLhoudaiViewController.h; sourceTree = "<group>"; };
 		F6B913621B833AA900FE41B6 /* ALLhoudaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALLhoudaiViewController.m; sourceTree = "<group>"; };
 		F6B913651B834AF100FE41B6 /* libWeiboSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeiboSDK.a; sourceTree = "<group>"; };
@@ -256,6 +277,8 @@
 				F68459B11B85DDD700C7F57A /* RegisterViewController.m */,
 				F6E2356B1B8AD6AE00852E4D /* FriendLinkViewController.h */,
 				F6E2356C1B8AD6AE00852E4D /* FriendLinkViewController.m */,
+				F67A33AA1B8AF78E00BA2A96 /* FamilyPhotoViewController.h */,
+				F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -265,6 +288,8 @@
 			children = (
 				F66ACC5A1B8081A000E1F3E4 /* FamilyCell.h */,
 				F66ACC5B1B8081A000E1F3E4 /* FamilyCell.m */,
+				F6AD782A1B8AFDFB00469596 /* PhotoViewCell.h */,
+				F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -272,9 +297,33 @@
 		F69F6D371B857C6900CA5873 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F6AD782D1B8AFF6900469596 /* familyPhotos */,
 				F69F6D381B857D1000CA5873 /* test.rtf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		F6AD782D1B8AFF6900469596 /* familyPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD784E1B8B3A1C00469596 /* 03.jpeg */,
+				F6AD782F1B8B006900469596 /* 01.jpeg */,
+				F6AD782E1B8B006900469596 /* 02.jpeg */,
+			);
+			name = familyPhotos;
+			sourceTree = "<group>";
+		};
+		F6AD78321B8B2E7000469596 /* InstagramPhotoPicker */ = {
+			isa = PBXGroup;
+			children = (
+				F6AD783C1B8B2E7000469596 /* TWImageScrollView.h */,
+				F6AD783D1B8B2E7000469596 /* TWImageScrollView.m */,
+				F6AD783E1B8B2E7000469596 /* TWPhotoCollectionViewCell.h */,
+				F6AD783F1B8B2E7000469596 /* TWPhotoCollectionViewCell.m */,
+				F6AD78401B8B2E7000469596 /* TWPhotoPickerController.h */,
+				F6AD78411B8B2E7000469596 /* TWPhotoPickerController.m */,
+			);
+			path = InstagramPhotoPicker;
 			sourceTree = "<group>";
 		};
 		F6B9137C1B834D9700FE41B6 /* shareSdk */ = {
@@ -312,6 +361,7 @@
 		F6B9138C1B834EDF00FE41B6 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				F6AD78321B8B2E7000469596 /* InstagramPhotoPicker */,
 				F6B913A51B83553C00FE41B6 /* Security.framework */,
 				F6E54CDE1B84B66B005004F0 /* libsqlite3.0.dylib */,
 				F6B9139D1B8354F600FE41B6 /* SystemConfiguration.framework */,
@@ -436,12 +486,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F66ACC2F1B8074AB00E1F3E4 /* Main.storyboard in Resources */,
+				F6AD784F1B8B3A1C00469596 /* 03.jpeg in Resources */,
 				F6B913851B834DE600FE41B6 /* ShareSDK.bundle in Resources */,
 				F69F6D391B857D1000CA5873 /* test.rtf in Resources */,
+				F6AD78301B8B006900469596 /* 02.jpeg in Resources */,
 				F66ACC341B8074AB00E1F3E4 /* LaunchScreen.xib in Resources */,
 				F66ACC311B8074AB00E1F3E4 /* Images.xcassets in Resources */,
 				F6B913911B834F2F00FE41B6 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				F6B913891B834DE600FE41B6 /* ShareSDKUI.bundle in Resources */,
+				F6AD78311B8B006900469596 /* 01.jpeg in Resources */,
 				F6B913711B834AF100FE41B6 /* WeiboSDK.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -477,8 +530,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */,
+				F6AD784C1B8B2E7000469596 /* TWPhotoPickerController.m in Sources */,
 				F66ACC261B8074AB00E1F3E4 /* AppDelegate.m in Sources */,
 				F6E2356D1B8AD6AE00852E4D /* FriendLinkViewController.m in Sources */,
+				F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */,
 				F6B913631B833AA900FE41B6 /* ALLhoudaiViewController.m in Sources */,
 				F66ACC4C1B80771300E1F3E4 /* FirstViewController.m in Sources */,
 				F66ACC231B8074AB00E1F3E4 /* main.m in Sources */,
@@ -488,6 +543,9 @@
 				F66ACC5C1B8081A000E1F3E4 /* FamilyCell.m in Sources */,
 				F66ACC651B80BD0900E1F3E4 /* xuzibeiTableViewController.m in Sources */,
 				F66ACC5F1B80AFB100E1F3E4 /* RecentFamilyViewController.m in Sources */,
+				F6AD782C1B8AFDFB00469596 /* PhotoViewCell.m in Sources */,
+				F6AD784A1B8B2E7000469596 /* TWImageScrollView.m in Sources */,
+				F6AD784B1B8B2E7000469596 /* TWPhotoCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

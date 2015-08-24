@@ -7,7 +7,7 @@
 //
 
 #import "FriendLinkViewController.h"
-
+#import "FamilyPhotoViewController.h"
 @interface FriendLinkViewController ()<UIWebViewDelegate>
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
@@ -53,7 +53,23 @@
     NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:addr]];
     [self.webView loadRequest:request];
 }
-
+- (IBAction)tushijixieClick:(id)sender {
+    NSString *addr=@"http://tsgcjx.chinapyp.com/";
+    NSURLRequest *request=[NSURLRequest requestWithURL:[NSURL URLWithString:addr]];
+    [self.webView loadRequest:request];
+    
+}
+- (IBAction)toFamilyPhotoClick:(id)sender {
+    [self performSegueWithIdentifier:@"tofamilyphoto_segue" sender:nil];
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"tofamilyphoto_segue"])
+    {
+        FamilyPhotoViewController *fpVC=[[FamilyPhotoViewController alloc]init];
+        fpVC=segue.destinationViewController;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
