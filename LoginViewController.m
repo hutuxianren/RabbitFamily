@@ -43,6 +43,7 @@
     [super viewDidLoad];
 //    self.textName.text=@"";
 //    self.textPwd.text=@"";
+    [NSThread sleepForTimeInterval:2.0];
     
     
     UIImageView* imgLogin = [[UIImageView alloc] initWithFrame:CGRectMake(mainSize.width / 2 - 211 / 2, 100, 211, 109)];
@@ -174,6 +175,7 @@
     //获取数据库文件路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@",documentsDirectory);
     self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
     
     //打开或创建数据库

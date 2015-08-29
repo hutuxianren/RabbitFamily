@@ -48,9 +48,6 @@
                 NSArray *zhuceInfo=[NSArray arrayWithObjects:self.nameTF.text, self.pwdTF.text , nil];
                 [self performSegueWithIdentifier:@"backtologin_segue" sender:zhuceInfo];
             }
-         char *errorMsg = NULL;
-            if (sqlite3_step(stmt) != SQLITE_DONE)
-                NSAssert(0, @"更新数据库表FIELDS出错: %s", errorMsg);
             }
             else
             {

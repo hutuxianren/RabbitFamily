@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //[NSThread sleepForTimeInterval:2.0];
     // Do any additional setup after loading the view.
     _guanggong=@"廙公后代";
 

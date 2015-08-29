@@ -21,7 +21,6 @@
 		F66ACC681B80CD0E00E1F3E4 /* genshenghoudaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */; };
 		F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */; };
 		F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F68459B11B85DDD700C7F57A /* RegisterViewController.m */; };
-		F69F6D391B857D1000CA5873 /* test.rtf in Resources */ = {isa = PBXBuildFile; fileRef = F69F6D381B857D1000CA5873 /* test.rtf */; };
 		F6A3904A1B85B0C3004BD575 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A390491B85B0C3004BD575 /* LoginViewController.m */; };
 		F6AD782C1B8AFDFB00469596 /* PhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */; };
 		F6AD78301B8B006900469596 /* 02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F6AD782E1B8B006900469596 /* 02.jpeg */; };
@@ -74,10 +73,10 @@
 		F66ACC1D1B8074AB00E1F3E4 /* RabbitFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RabbitFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66ACC211B8074AB00E1F3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66ACC221B8074AB00E1F3E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F66ACC241B8074AB00E1F3E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F66ACC251B8074AB00E1F3E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F66ACC241B8074AB00E1F3E4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RabbitFamily/AppDelegate.h; sourceTree = "<group>"; };
+		F66ACC251B8074AB00E1F3E4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RabbitFamily/AppDelegate.m; sourceTree = "<group>"; };
 		F66ACC2E1B8074AB00E1F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		F66ACC301B8074AB00E1F3E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F66ACC301B8074AB00E1F3E4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../RabbitFamily/Images.xcassets; sourceTree = "<group>"; };
 		F66ACC331B8074AB00E1F3E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F66ACC391B8074AB00E1F3E4 /* RabbitFamilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RabbitFamilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66ACC3E1B8074AB00E1F3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -94,11 +93,11 @@
 		F66ACC641B80BD0900E1F3E4 /* xuzibeiTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = xuzibeiTableViewController.m; sourceTree = "<group>"; };
 		F66ACC661B80CD0E00E1F3E4 /* genshenghoudaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genshenghoudaiViewController.h; sourceTree = "<group>"; };
 		F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genshenghoudaiViewController.m; sourceTree = "<group>"; };
+		F67418FC1B91889200570222 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.sqlite3; path = ../database.sqlite3; sourceTree = "<group>"; };
 		F67A33AA1B8AF78E00BA2A96 /* FamilyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyPhotoViewController.h; sourceTree = "<group>"; };
 		F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyPhotoViewController.m; sourceTree = "<group>"; };
 		F68459B01B85DDD700C7F57A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F68459B11B85DDD700C7F57A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		F69F6D381B857D1000CA5873 /* test.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = test.rtf; sourceTree = "<group>"; };
 		F6A390481B85B0C3004BD575 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F6A390491B85B0C3004BD575 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F6AD782A1B8AFDFB00469596 /* PhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewCell.h; sourceTree = "<group>"; };
@@ -198,10 +197,6 @@
 		F66ACC141B8074AB00E1F3E4 = {
 			isa = PBXGroup;
 			children = (
-				F69F6D371B857C6900CA5873 /* Resources */,
-				F6B9138C1B834EDF00FE41B6 /* lib */,
-				F66ACC591B80816E00E1F3E4 /* view */,
-				F66ACC491B80759000E1F3E4 /* Controller */,
 				F66ACC1F1B8074AB00E1F3E4 /* RabbitFamily */,
 				F66ACC3C1B8074AB00E1F3E4 /* RabbitFamilyTests */,
 				F66ACC1E1B8074AB00E1F3E4 /* Products */,
@@ -220,11 +215,9 @@
 		F66ACC1F1B8074AB00E1F3E4 /* RabbitFamily */ = {
 			isa = PBXGroup;
 			children = (
-				F66ACC241B8074AB00E1F3E4 /* AppDelegate.h */,
-				F66ACC251B8074AB00E1F3E4 /* AppDelegate.m */,
-				F66ACC2D1B8074AB00E1F3E4 /* Main.storyboard */,
-				F66ACC301B8074AB00E1F3E4 /* Images.xcassets */,
-				F66ACC321B8074AB00E1F3E4 /* LaunchScreen.xib */,
+				F66ACC491B80759000E1F3E4 /* Controller */,
+				F66ACC591B80816E00E1F3E4 /* view */,
+				F67418FB1B91873A00570222 /* others */,
 				F66ACC201B8074AB00E1F3E4 /* Supporting Files */,
 			);
 			path = RabbitFamily;
@@ -233,6 +226,9 @@
 		F66ACC201B8074AB00E1F3E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F67418FC1B91889200570222 /* database.sqlite3 */,
+				F6B9138C1B834EDF00FE41B6 /* lib */,
+				F69F6D371B857C6900CA5873 /* Resources */,
 				F66ACC211B8074AB00E1F3E4 /* Info.plist */,
 				F66ACC221B8074AB00E1F3E4 /* main.m */,
 			);
@@ -242,8 +238,8 @@
 		F66ACC3C1B8074AB00E1F3E4 /* RabbitFamilyTests */ = {
 			isa = PBXGroup;
 			children = (
-				F66ACC3F1B8074AB00E1F3E4 /* RabbitFamilyTests.m */,
 				F66ACC3D1B8074AB00E1F3E4 /* Supporting Files */,
+				F66ACC3F1B8074AB00E1F3E4 /* RabbitFamilyTests.m */,
 			);
 			path = RabbitFamilyTests;
 			sourceTree = "<group>";
@@ -251,10 +247,12 @@
 		F66ACC3D1B8074AB00E1F3E4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F66ACC301B8074AB00E1F3E4 /* Images.xcassets */,
 				F66ACC3E1B8074AB00E1F3E4 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
+			path = RabbitFamilyTests;
+			sourceTree = SOURCE_ROOT;
 		};
 		F66ACC491B80759000E1F3E4 /* Controller */ = {
 			isa = PBXGroup;
@@ -281,6 +279,7 @@
 				F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */,
 			);
 			name = Controller;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F66ACC591B80816E00E1F3E4 /* view */ = {
@@ -290,17 +289,30 @@
 				F66ACC5B1B8081A000E1F3E4 /* FamilyCell.m */,
 				F6AD782A1B8AFDFB00469596 /* PhotoViewCell.h */,
 				F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */,
+				F66ACC321B8074AB00E1F3E4 /* LaunchScreen.xib */,
+				F66ACC2D1B8074AB00E1F3E4 /* Main.storyboard */,
 			);
 			name = view;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		F67418FB1B91873A00570222 /* others */ = {
+			isa = PBXGroup;
+			children = (
+				F66ACC241B8074AB00E1F3E4 /* AppDelegate.h */,
+				F66ACC251B8074AB00E1F3E4 /* AppDelegate.m */,
+			);
+			name = others;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F69F6D371B857C6900CA5873 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				F6AD782D1B8AFF6900469596 /* familyPhotos */,
-				F69F6D381B857D1000CA5873 /* test.rtf */,
 			);
 			name = Resources;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F6AD782D1B8AFF6900469596 /* familyPhotos */ = {
@@ -382,6 +394,7 @@
 				F6B9137C1B834D9700FE41B6 /* shareSdk */,
 			);
 			name = lib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		F6B9138D1B834F2F00FE41B6 /* QQSDK */ = {
@@ -488,7 +501,6 @@
 				F66ACC2F1B8074AB00E1F3E4 /* Main.storyboard in Resources */,
 				F6AD784F1B8B3A1C00469596 /* 03.jpeg in Resources */,
 				F6B913851B834DE600FE41B6 /* ShareSDK.bundle in Resources */,
-				F69F6D391B857D1000CA5873 /* test.rtf in Resources */,
 				F6AD78301B8B006900469596 /* 02.jpeg in Resources */,
 				F66ACC341B8074AB00E1F3E4 /* LaunchScreen.xib in Resources */,
 				F66ACC311B8074AB00E1F3E4 /* Images.xcassets in Resources */,
@@ -574,6 +586,7 @@
 				F66ACC2E1B8074AB00E1F3E4 /* Base */,
 			);
 			name = Main.storyboard;
+			path = RabbitFamily;
 			sourceTree = "<group>";
 		};
 		F66ACC321B8074AB00E1F3E4 /* LaunchScreen.xib */ = {
@@ -582,6 +595,7 @@
 				F66ACC331B8074AB00E1F3E4 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = RabbitFamily;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -604,7 +618,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: long weilian (697GTH6D43)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -626,6 +640,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "509dcce7-7381-4ef9-bf9b-f2fca97fdf1b";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -647,7 +662,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: long weilian (697GTH6D43)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: long weilian (697GTH6D43)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -662,6 +678,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "509dcce7-7381-4ef9-bf9b-f2fca97fdf1b";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -671,6 +688,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: long weilian (697GTH6D43)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist ";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -685,6 +705,7 @@
 					"$(PROJECT_DIR)/QQSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "509dcce7-7381-4ef9-bf9b-f2fca97fdf1b";
 			};
 			name = Debug;
 		};
@@ -692,6 +713,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: long weilian (697GTH6D43)";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist ";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -706,6 +730,7 @@
 					"$(PROJECT_DIR)/QQSDK/WeChatSDK",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "509dcce7-7381-4ef9-bf9b-f2fca97fdf1b";
 			};
 			name = Release;
 		};
