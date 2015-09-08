@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC2629FD4E808937D3CEFFC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A4921142B766AB984271F764 /* libPods.a */; };
+		F630B3691B91D3A600B38930 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F630B3681B91D3A600B38930 /* TestViewController.m */; };
+		F630B36D1B91D9A700B38930 /* MyFriendList.m in Sources */ = {isa = PBXBuildFile; fileRef = F630B36C1B91D9A700B38930 /* MyFriendList.m */; };
+		F630B3701B91DD4F00B38930 /* MyContactsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F630B36F1B91DD4F00B38930 /* MyContactsListCell.m */; };
 		F66ACC231B8074AB00E1F3E4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC221B8074AB00E1F3E4 /* main.m */; };
 		F66ACC261B8074AB00E1F3E4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC251B8074AB00E1F3E4 /* AppDelegate.m */; };
 		F66ACC2F1B8074AB00E1F3E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F66ACC2D1B8074AB00E1F3E4 /* Main.storyboard */; };
@@ -21,6 +25,7 @@
 		F66ACC681B80CD0E00E1F3E4 /* genshenghoudaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */; };
 		F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */; };
 		F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F68459B11B85DDD700C7F57A /* RegisterViewController.m */; };
+		F69810771B9695FF00878FE6 /* FMDBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69810761B9695FF00878FE6 /* FMDBTestViewController.m */; };
 		F6A3904A1B85B0C3004BD575 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A390491B85B0C3004BD575 /* LoginViewController.m */; };
 		F6AD782C1B8AFDFB00469596 /* PhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */; };
 		F6AD78301B8B006900469596 /* 02.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F6AD782E1B8B006900469596 /* 02.jpeg */; };
@@ -70,6 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21EB8C8F1440DD6EE89D1A38 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A4921142B766AB984271F764 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6209D4E595A16930CEA831C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		F630B3671B91D3A600B38930 /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		F630B3681B91D3A600B38930 /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		F630B36B1B91D9A700B38930 /* MyFriendList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFriendList.h; sourceTree = "<group>"; };
+		F630B36C1B91D9A700B38930 /* MyFriendList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFriendList.m; sourceTree = "<group>"; };
+		F630B36E1B91DD4F00B38930 /* MyContactsListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyContactsListCell.h; sourceTree = "<group>"; };
+		F630B36F1B91DD4F00B38930 /* MyContactsListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyContactsListCell.m; sourceTree = "<group>"; };
 		F66ACC1D1B8074AB00E1F3E4 /* RabbitFamily.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RabbitFamily.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F66ACC211B8074AB00E1F3E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F66ACC221B8074AB00E1F3E4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -98,6 +112,8 @@
 		F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyPhotoViewController.m; sourceTree = "<group>"; };
 		F68459B01B85DDD700C7F57A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F68459B11B85DDD700C7F57A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		F69810751B9695FF00878FE6 /* FMDBTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTestViewController.h; sourceTree = "<group>"; };
+		F69810761B9695FF00878FE6 /* FMDBTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTestViewController.m; sourceTree = "<group>"; };
 		F6A390481B85B0C3004BD575 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		F6A390491B85B0C3004BD575 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F6AD782A1B8AFDFB00469596 /* PhotoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewCell.h; sourceTree = "<group>"; };
@@ -181,6 +197,7 @@
 				F6B913881B834DE600FE41B6 /* ShareSDKExtension.framework in Frameworks */,
 				F6B913871B834DE600FE41B6 /* ShareSDKConnector.framework in Frameworks */,
 				F6B913841B834DE600FE41B6 /* MOBFoundation.framework in Frameworks */,
+				AC2629FD4E808937D3CEFFC7 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,12 +211,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51BD6C24D1DEC7517E6EFACB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4921142B766AB984271F764 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F630B36A1B91D42E00B38930 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F630B36B1B91D9A700B38930 /* MyFriendList.h */,
+				F630B36C1B91D9A700B38930 /* MyFriendList.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		F66ACC141B8074AB00E1F3E4 = {
 			isa = PBXGroup;
 			children = (
 				F66ACC1F1B8074AB00E1F3E4 /* RabbitFamily */,
 				F66ACC3C1B8074AB00E1F3E4 /* RabbitFamilyTests */,
 				F66ACC1E1B8074AB00E1F3E4 /* Products */,
+				F7610322840B44258131337B /* Pods */,
+				51BD6C24D1DEC7517E6EFACB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -215,6 +251,7 @@
 		F66ACC1F1B8074AB00E1F3E4 /* RabbitFamily */ = {
 			isa = PBXGroup;
 			children = (
+				F630B36A1B91D42E00B38930 /* Models */,
 				F66ACC491B80759000E1F3E4 /* Controller */,
 				F66ACC591B80816E00E1F3E4 /* view */,
 				F67418FB1B91873A00570222 /* others */,
@@ -277,6 +314,10 @@
 				F6E2356C1B8AD6AE00852E4D /* FriendLinkViewController.m */,
 				F67A33AA1B8AF78E00BA2A96 /* FamilyPhotoViewController.h */,
 				F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */,
+				F630B3671B91D3A600B38930 /* TestViewController.h */,
+				F630B3681B91D3A600B38930 /* TestViewController.m */,
+				F69810751B9695FF00878FE6 /* FMDBTestViewController.h */,
+				F69810761B9695FF00878FE6 /* FMDBTestViewController.m */,
 			);
 			name = Controller;
 			path = ..;
@@ -291,6 +332,8 @@
 				F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */,
 				F66ACC321B8074AB00E1F3E4 /* LaunchScreen.xib */,
 				F66ACC2D1B8074AB00E1F3E4 /* Main.storyboard */,
+				F630B36E1B91DD4F00B38930 /* MyContactsListCell.h */,
+				F630B36F1B91DD4F00B38930 /* MyContactsListCell.m */,
 			);
 			name = view;
 			path = ..;
@@ -417,6 +460,15 @@
 			path = QQSDK/WeChatSDK;
 			sourceTree = "<group>";
 		};
+		F7610322840B44258131337B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				21EB8C8F1440DD6EE89D1A38 /* Pods.debug.xcconfig */,
+				D6209D4E595A16930CEA831C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -424,10 +476,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F66ACC431B8074AB00E1F3E4 /* Build configuration list for PBXNativeTarget "RabbitFamily" */;
 			buildPhases = (
+				6F9780182E9249E49B2178BD /* Check Pods Manifest.lock */,
 				F66ACC191B8074AB00E1F3E4 /* Sources */,
 				F66ACC1A1B8074AB00E1F3E4 /* Frameworks */,
 				F66ACC1B1B8074AB00E1F3E4 /* Resources */,
 				F65889071B821A42008B1761 /* ShellScript */,
+				78CD97E0E655CA59DDB168A9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -521,6 +575,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		6F9780182E9249E49B2178BD /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		78CD97E0E655CA59DDB168A9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F65889071B821A42008B1761 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -542,15 +626,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */,
+				F69810771B9695FF00878FE6 /* FMDBTestViewController.m in Sources */,
 				F6AD784C1B8B2E7000469596 /* TWPhotoPickerController.m in Sources */,
 				F66ACC261B8074AB00E1F3E4 /* AppDelegate.m in Sources */,
 				F6E2356D1B8AD6AE00852E4D /* FriendLinkViewController.m in Sources */,
+				F630B3701B91DD4F00B38930 /* MyContactsListCell.m in Sources */,
 				F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */,
 				F6B913631B833AA900FE41B6 /* ALLhoudaiViewController.m in Sources */,
+				F630B3691B91D3A600B38930 /* TestViewController.m in Sources */,
 				F66ACC4C1B80771300E1F3E4 /* FirstViewController.m in Sources */,
 				F66ACC231B8074AB00E1F3E4 /* main.m in Sources */,
 				F6A3904A1B85B0C3004BD575 /* LoginViewController.m in Sources */,
 				F66ACC681B80CD0E00E1F3E4 /* genshenghoudaiViewController.m in Sources */,
+				F630B36D1B91D9A700B38930 /* MyFriendList.m in Sources */,
 				F66ACC621B80B6A100E1F3E4 /* haiquanFirstTableViewController.m in Sources */,
 				F66ACC5C1B8081A000E1F3E4 /* FamilyCell.m in Sources */,
 				F66ACC651B80BD0900E1F3E4 /* xuzibeiTableViewController.m in Sources */,
@@ -686,6 +774,7 @@
 		};
 		F66ACC441B8074AB00E1F3E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21EB8C8F1440DD6EE89D1A38 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -711,6 +800,7 @@
 		};
 		F66ACC451B8074AB00E1F3E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6209D4E595A16930CEA831C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

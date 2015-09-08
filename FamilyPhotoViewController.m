@@ -11,9 +11,10 @@
 #import "/usr/include/sqlite3.h"
 #import"TWPhotoPickerController.h"
 #define kDatabaseName @"database.sqlite3"
-@interface FamilyPhotoViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface FamilyPhotoViewController ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property(nonatomic,strong)NSMutableArray *images;
 @property (strong, nonatomic) IBOutlet UITableView *imageTable;
+@property(strong,nonatomic)UIImage *familyImage;
 
 
 @end
@@ -22,10 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-
-    
     _images=[NSMutableArray arrayWithCapacity:50];
+    [self getHeadImage];
+}
+#pragma 从数据库取得图片文件
+-(void)getHeadImage
+{
     
     //获取数据库文件路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -55,28 +58,92 @@
             //char *photoUrl = (char*)sqlite3_column_text(statement, 0);
             //char *pwd = (char *)sqlite3_column_text(statement, 1);
             NSString *photoUrl=[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)];
-            [_images addObject:photoUrl];
+            NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:photoUrl];
+            [_images addObject:fullPath];
             //NSLog(@"PHOTOURL%@",photoUrl);
- 
-          }
+            
+        }
         sqlite3_finalize(statement);
 #pragma 关闭数据库
         sqlite3_close(database);
     }
-
 }
 
 - (IBAction)addPhotos:(id)sender {
-    TWPhotoPickerController *photoPicker = [[TWPhotoPickerController alloc] init];
-    photoPicker.cropBlock = ^(UIImage *image) {
-        NSLog(@"This is the image you choose %@",image);
-    
+    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+    photoPicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
         //do something
+    photoPicker.delegate=self;
+    [self presentViewController:photoPicker animated:YES completion:nil];
+}
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{ [picker dismissViewControllerAnimated:YES completion:^(){
+    _familyImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    int i=arc4random();
+    //NSString *num = [[NSString alloc] initWithFormat:@"%d",i];
+    NSString *imageName=[NSString stringWithFormat:@"image%d",i];
+    [self saveImage:_familyImage withName:imageName];
+    
+    //NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
+    //将数据插入数据库
+    //获取数据库文件路径
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@",documentsDirectory);
+    self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
+    //打开数据库
+    sqlite3 *database;
+    if (sqlite3_open([self.databaseFilePath UTF8String], &database)
+        != SQLITE_OK) {
+        sqlite3_close(database);
+        NSAssert(0, @"打开数据库失败！");
+    }
+    char *update = "INSERT INTO photo (photourl) VALUES (?);";
 
-    };
-    [self presentViewController:photoPicker animated:YES completion:NULL];
+    sqlite3_stmt *stmt;
+
+            if (sqlite3_prepare_v2(database, update, -1, &stmt, nil) == SQLITE_OK) {
+                //sqlite3_bind_text(stmt, 1, [num UTF8String],-1,NULL);
+                sqlite3_bind_text(stmt, 1, [imageName UTF8String], -1, NULL);
+            }
+    if (sqlite3_step(stmt) != SQLITE_DONE) {
+        NSAssert(0, @"插入数据失败！");
+        sqlite3_finalize(stmt);
+    }
+    //插入数据后重新获取数据库中的图片数据.
+    [self getHeadImage];
+    //[_images addObject:fullPath];
+    [_imageTable reloadData];
+    
+    sqlite3_finalize(stmt);
+    
+    //关闭数据库
+    sqlite3_close(database);
+    
+    
+    //UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
+
+}];
+    //[_images addObject:portraitImg];
 }
 
+#pragma mark - 保存图片至沙盒
+- (void) saveImage:(UIImage *)currentImage withName:(NSString *)imageName
+{
+    
+    NSData *imageData = UIImageJPEGRepresentation(currentImage, 0.5);
+    // 获取沙盒目录
+    
+    NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
+    // 将图片写入文件
+    
+    [imageData writeToFile:fullPath atomically:NO];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:^{}];
+}
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 250;
@@ -88,7 +155,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _images.count;
+     return _images.count;
 }
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
