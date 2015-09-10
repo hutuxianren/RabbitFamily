@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "FMDataBase.h"
 
 #define mainSize    [UIScreen mainScreen].bounds.size
 
@@ -32,12 +33,14 @@
     
     JxbLoginShowType showType;
 }
-@property (strong, nonatomic) IBOutlet UITextField *textName;
-@property (strong, nonatomic) IBOutlet UITextField *textPwd;
-
+@property(strong,nonatomic)FMDatabase *db;
 @end
 
 @implementation LoginViewController
+- (IBAction)backup:(id)sender {
+    [txtPwd resignFirstResponder];
+    [txtUser resignFirstResponder];
+}
 @synthesize databaseFilePath;
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -95,6 +98,14 @@
     txtPwd.leftViewMode = UITextFieldViewModeAlways;
     UIImageView* imgPwd = [[UIImageView alloc] initWithFrame:CGRectMake(11, 11, 22, 22)];
     imgPwd.image = [UIImage imageNamed:@"iconfont-password"];
+    [txtPwd addTarget:self action:@selector(finishedEdit) forControlEvents:UIControlEventEditingDidEndOnExit];
+    [txtUser addTarget:self action:@selector(finishedEdit) forControlEvents:UIControlEventEditingDidEndOnExit];
+    txtUser.placeholder=@"请输入用户名";
+    txtPwd.placeholder=@"请输入密码";
+    txtPwd.clearButtonMode=UITextFieldViewModeWhileEditing;
+    txtUser.clearButtonMode=UITextFieldViewModeWhileEditing;
+    txtUser.returnKeyType=UIReturnKeyDone;
+    txtPwd.returnKeyType=UIReturnKeyDone;
     [txtPwd.leftView addSubview:imgPwd];
     [vLogin addSubview:txtPwd];
     // Do any additional setup after loading the view.
@@ -120,12 +131,16 @@
 //     name:UIApplicationWillResignActiveNotification
 //     object:app];
 }
+-(void)finishedEdit
+{
+    [self resignFirstResponder];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
 //    txtUser.text=[_zhuceInfo objectAtIndex:0];
 //    txtPwd.text=[_zhuceInfo objectAtIndex:1];
-    txtUser.text=@"tuyixin";
-    txtPwd.text=@"123456";
+    txtUser.text=@"tutu";
+    txtPwd.text=@"123";
 }
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     if ([textField isEqual:txtUser]) {
@@ -174,73 +189,90 @@
     //NSLog(@"登录按钮");
     //获取数据库文件路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentsDirectory);
-    self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
-    
-    //打开或创建数据库
-    sqlite3 *database;
-    if (sqlite3_open([self.databaseFilePath UTF8String] , &database) != SQLITE_OK) {
-        sqlite3_close(database);
-        NSAssert(0, @"打开数据库失败！");
-    }
-    else
+    NSString *fileName=[[paths lastObject]stringByAppendingPathComponent:@"family.sqilte"];
+    _db=[FMDatabase databaseWithPath:fileName];
+    if([_db open])
     {
-        NSLog(@"打开数据库成功");
+        NSLog(@"数据库登录成功");
     }
-    //执行查询
-    NSString *query =[NSString stringWithFormat:@"select *from username where username='%@' and password='%@'",txtUser.text,txtPwd.text];
-    sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
-        //NSLog(@"登陆成功");
-        //依次读取数据库表格FIELDS中每行的内容，并显示在对应的TextField
-        if(sqlite3_step(statement) == SQLITE_ROW) {
-        
-            char *username = (char*)sqlite3_column_text(statement, 0);
-            char *pwd = (char *)sqlite3_column_text(statement, 1);
-            NSString *name=[NSString stringWithUTF8String:username];
-            NSString *password=[NSString stringWithUTF8String:pwd];
-            NSLog(@"name%@",name);
-            NSLog(@"pwd%@",password);
-            if ([txtUser.text isEqualToString:name]&&[txtPwd.text isEqualToString:password]) {
-                [self performSegueWithIdentifier:@"loginseccess_segue" sender:nil];
-                NSLog(@"登陆成功");
+    FMResultSet *set=[_db executeQuery:@"select *from t_user"];
+        while ([set next]) {
+            NSString *name=[set objectForColumnName:@"name"];
+            NSString *pwd=[set objectForColumnName:@"password"];
+            if([name isEqualToString:txtUser.text]&&[txtPwd.text isEqualToString:pwd])
+            {
+                              [self performSegueWithIdentifier:@"loginseccess_segue" sender:nil];
             }
-
         }
-        else if([txtUser.text isEqual:@""]||[txtPwd.text isEqual:@""])
-        {
-            UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入完整" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-            [alertview show];
-        }
-        else
-        {
-            NSString *queryByName=[NSString stringWithFormat:@"select * from username where username='%@' or password='%@'",txtUser.text,txtPwd.text];
-                if (sqlite3_prepare_v2(database, [queryByName UTF8String], -1, &statement, nil) == SQLITE_OK) {
-                            if(sqlite3_step(statement) == SQLITE_ROW)
-                            {
-                                UIAlertView *alerview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"请核对用户名或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-                                [alerview show];
-                            }
-                    
-                            else
-                            {
-                                UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"该用户名不存在" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
-                                [alertview show];
-                            }
-        }
-
-
-        sqlite3_finalize(statement);
-    }
-
-
     
-#pragma 关闭数据库
-        sqlite3_close(database);
-    
-
-}
+        [_db close];
+//    NSString *documentsDirectory = [paths objectAtIndex:0];
+//    NSLog(@"%@",documentsDirectory);
+//    self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
+//    
+//    //打开或创建数据库
+//    sqlite3 *database;
+//    if (sqlite3_open([self.databaseFilePath UTF8String] , &database) != SQLITE_OK) {
+//        sqlite3_close(database);
+//        NSAssert(0, @"打开数据库失败！");
+//    }
+//    else
+//    {
+//        NSLog(@"打开数据库成功");
+//    }
+//    //执行查询
+//    NSString *query =[NSString stringWithFormat:@"select *from username where username='%@' and password='%@'",txtUser.text,txtPwd.text];
+//    sqlite3_stmt *statement;
+//    if (sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
+//        //NSLog(@"登陆成功");
+//        //依次读取数据库表格FIELDS中每行的内容，并显示在对应的TextField
+//        if(sqlite3_step(statement) == SQLITE_ROW) {
+//        
+//            char *username = (char*)sqlite3_column_text(statement, 0);
+//            char *pwd = (char *)sqlite3_column_text(statement, 1);
+//            NSString *name=[NSString stringWithUTF8String:username];
+//            NSString *password=[NSString stringWithUTF8String:pwd];
+//            NSLog(@"name%@",name);
+//            NSLog(@"pwd%@",password);
+//            if ([txtUser.text isEqualToString:name]&&[txtPwd.text isEqualToString:password]) {
+//                [self performSegueWithIdentifier:@"loginseccess_segue" sender:nil];
+//                NSLog(@"登陆成功");
+//            }
+//
+//        }
+//        else if([txtUser.text isEqual:@""]||[txtPwd.text isEqual:@""])
+//        {
+//            UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"请输入完整" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//            [alertview show];
+//        }
+//        else
+//        {
+//            NSString *queryByName=[NSString stringWithFormat:@"select * from username where username='%@' or password='%@'",txtUser.text,txtPwd.text];
+//                if (sqlite3_prepare_v2(database, [queryByName UTF8String], -1, &statement, nil) == SQLITE_OK) {
+//                            if(sqlite3_step(statement) == SQLITE_ROW)
+//                            {
+//                                UIAlertView *alerview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"请核对用户名或密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//                                [alerview show];
+//                            }
+//                    
+//                            else
+//                            {
+//                                UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"提示" message:@"该用户名不存在" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: nil];
+//                                [alertview show];
+//                            }
+//        }
+//
+//
+//        sqlite3_finalize(statement);
+//    }
+//
+//
+//    
+//#pragma 关闭数据库
+//        sqlite3_close(database);
+//    
+//
+//}
 }
 - (IBAction)btnRegister:(id)sender {
     [self performSegueWithIdentifier:@"toregister_segue" sender:nil];

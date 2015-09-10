@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="MVg-mD-aZb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ITa-Z2-gka">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
@@ -80,8 +80,17 @@
                                     <outlet property="delegate" destination="A8o-uB-hOj" id="3DB-tR-joJ"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="112" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VAn-ui-mpN">
-                                <rect key="frame" x="0.0" y="136" width="320" height="568"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3j-11-0dH">
+                                <rect key="frame" x="280" y="109" width="29" height="24"/>
+                                <state key="normal" title="分享" image="weiboshare">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareBtn:" destination="A8o-uB-hOj" eventType="touchUpInside" id="ooG-8Q-fPm"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="VAn-ui-mpN">
+                                <rect key="frame" x="0.0" y="135" width="320" height="311"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="secondId" rowHeight="112" id="ALW-yt-wah" customClass="FamilyCell">
@@ -116,15 +125,6 @@
                                     <outlet property="delegate" destination="A8o-uB-hOj" id="7r8-TJ-hQb"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3j-11-0dH">
-                                <rect key="frame" x="280" y="109" width="29" height="24"/>
-                                <state key="normal" title="分享" image="weiboshare">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="shareBtn:" destination="A8o-uB-hOj" eventType="touchUpInside" id="ooG-8Q-fPm"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -275,7 +275,7 @@
             </objects>
             <point key="canvasLocation" x="3245" y="1385"/>
         </scene>
-        <!--Family Photo View Controller-->
+        <!--家族照片-->
         <scene sceneID="hvS-35-ZXc">
             <objects>
                 <viewController id="SlF-TM-Ve4" customClass="FamilyPhotoViewController" sceneMemberID="viewController">
@@ -298,7 +298,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="245" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7Y3-5z-Mv4">
-                                <rect key="frame" x="0.0" y="110" width="324" height="443"/>
+                                <rect key="frame" x="0.0" y="110" width="324" height="317"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoCell" rowHeight="245" id="fC5-Qy-Ivy" customClass="PhotoViewCell">
@@ -307,7 +307,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2RY-Ir-zeq">
-                                                    <rect key="frame" x="0.0" y="-5" width="331" height="249"/>
+                                                    <rect key="frame" x="0.0" y="-5" width="331" height="234"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -324,7 +324,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="6Mk-V0-qSe"/>
+                    <navigationItem key="navigationItem" title="家族照片" id="6Mk-V0-qSe"/>
                     <connections>
                         <outlet property="imageTable" destination="7Y3-5z-Mv4" id="rC7-wN-YD1"/>
                     </connections>
@@ -532,7 +532,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j4H-87-cPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="-473"/>
+            <point key="canvasLocation" x="1083" y="-661"/>
         </scene>
         <!--涂氏宗谱-->
         <scene sceneID="ndI-3E-1Ku">
@@ -542,7 +542,7 @@
                         <viewControllerLayoutGuide type="top" id="ZMD-4s-Ggh"/>
                         <viewControllerLayoutGuide type="bottom" id="Dng-Yv-5xk"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="FBk-mL-jRZ">
+                    <view key="view" contentMode="scaleToFill" id="FBk-mL-jRZ" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -566,16 +566,19 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <action selector="backup:" destination="ITa-Z2-gka" eventType="touchDown" id="BSc-8E-aiQ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="涂氏宗谱登录系统" id="hZW-qq-IYD"/>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="push" identifier="loginseccess_segue" id="daw-uL-KjD"/>
+                        <segue destination="49e-Tb-3d3" kind="modal" identifier="loginseccess_segue" id="daw-uL-KjD"/>
                         <segue destination="rkw-gn-mt6" kind="push" identifier="toregister_segue" id="rp0-HU-ewo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OnM-N1-MGA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="-9"/>
+            <point key="canvasLocation" x="104" y="-332"/>
         </scene>
         <!--涂氏家谱-->
         <scene sceneID="yl2-sM-qoP">
@@ -597,7 +600,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1064" y="0.0"/>
+            <point key="canvasLocation" x="-92" y="828"/>
         </scene>
         <!--世代家谱-->
         <scene sceneID="wiD-rH-Fa4">
@@ -669,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K7o-z6-eyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="418" y="522"/>
+            <point key="canvasLocation" x="396" y="1002"/>
         </scene>
         <!--近代家谱-->
         <scene sceneID="q6U-x7-E8J">
@@ -711,24 +714,6 @@
             </objects>
             <point key="canvasLocation" x="1261" y="913"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="oqz-bZ-XqY">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d5e-wz-cnT" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4YN-m9-AWb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ITa-Z2-gka" kind="relationship" relationship="rootViewController" id="UxI-Zl-oaA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zwj-7U-sLS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-397" y="5"/>
-        </scene>
         <!--友情链接-->
         <scene sceneID="9rH-uj-gB7">
             <objects>
@@ -759,7 +744,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="UxI-Zl-oaA"/>
-    </inferredMetricsTieBreakers>
 </document>

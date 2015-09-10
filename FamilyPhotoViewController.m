@@ -11,10 +11,15 @@
 #import "/usr/include/sqlite3.h"
 #import"TWPhotoPickerController.h"
 #define kDatabaseName @"database.sqlite3"
-@interface FamilyPhotoViewController ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+#import "FMDataBase.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+@interface FamilyPhotoViewController ()<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
 @property(nonatomic,strong)NSMutableArray *images;
 @property (strong, nonatomic) IBOutlet UITableView *imageTable;
 @property(strong,nonatomic)UIImage *familyImage;
+@property(strong,nonatomic)FMDatabase *db;
+
+@property(strong,nonatomic)UIActionSheet *photosheet;
 
 
 @end
@@ -24,58 +29,79 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _images=[NSMutableArray arrayWithCapacity:50];
+[self.navigationItem setHidesBackButton:YES];
     [self getHeadImage];
 }
 #pragma 从数据库取得图片文件
 -(void)getHeadImage
 {
-    
-    //获取数据库文件路径
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentsDirectory);
-    self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
-    
-    //打开或创建数据库
-    sqlite3 *database;
-    if (sqlite3_open([self.databaseFilePath UTF8String] , &database) != SQLITE_OK) {
-        sqlite3_close(database);
-        NSAssert(0, @"打开数据库失败！");
-    }
-    else
+    NSString *fileName=[[paths lastObject]stringByAppendingPathComponent:@"family.sqilte"];
+    _db=[FMDatabase databaseWithPath:fileName];
+    if([_db open])
     {
-        NSLog(@"打开数据库成功");
+        NSLog(@"数据库打开成功!");
     }
-    
-    //执行查询
-    NSString *query =[NSString stringWithFormat:@"select photourl from photo"];
-    sqlite3_stmt *statement;
-    if (sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK) {
-        NSLog(@"登陆成功");
-        //依次读取数据库表格FIELDS中每行的内容，并显示在对应的TextField
-        while(sqlite3_step(statement) == SQLITE_ROW) {
-            
-            //char *photoUrl = (char*)sqlite3_column_text(statement, 0);
-            //char *pwd = (char *)sqlite3_column_text(statement, 1);
-            NSString *photoUrl=[NSString stringWithUTF8String:(char*)sqlite3_column_text(statement, 0)];
-            NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:photoUrl];
-            [_images addObject:fullPath];
-            //NSLog(@"PHOTOURL%@",photoUrl);
-            
-        }
-        sqlite3_finalize(statement);
-#pragma 关闭数据库
-        sqlite3_close(database);
+    BOOL result=[_db executeUpdate:@"CREATE TABLE IF NOT EXISTS t_photo (id integer PRIMARY KEY AUTOINCREMENT,headImage text NOT NULL);"];
+    if(result)
+    {
+        NSLog(@"创表成功!");
+    }
+    FMResultSet *set=[_db executeQuery:@"select *from t_photo"];
+    while ([set next]) {
+        NSString *headImage=[set objectForColumnName:@"headImage"];
+        NSString *fullPath=[[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:headImage];
+        [_images addObject:fullPath];
     }
 }
 
 - (IBAction)addPhotos:(id)sender {
-    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
-    photoPicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
-        //do something
-    photoPicker.delegate=self;
-    [self presentViewController:photoPicker animated:YES completion:nil];
+    _photosheet=[[UIActionSheet alloc]initWithTitle:@"请选择照片来源" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照",@"从相册中选择",nil];
+    [_photosheet showInView:self.view];
+//    UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+//    photoPicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+//    photoPicker.delegate=self;
+//    [self presentViewController:photoPicker animated:YES completion:nil];
 }
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if(buttonIndex==0)
+    {
+        //相机可用且支持拍照
+        if([self isCameraAvailable]&&[self doesCameraSupportTakingPhotos])
+        {
+        UIImagePickerController *photoPicker=[[UIImagePickerController alloc]init];
+        photoPicker.sourceType=UIImagePickerControllerSourceTypeCamera;
+        photoPicker.delegate=self;
+        [self presentViewController:photoPicker animated:YES completion:nil];
+        }
+        else
+        {
+            UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"警告" message:@"该设备不支持照相" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alertview show];
+        }
+        
+    }
+    if(buttonIndex==1)
+    {
+        if([self isPhotoLibraryAvailable])
+        {
+        UIImagePickerController *photoPicker = [[UIImagePickerController alloc] init];
+        photoPicker.sourceType=UIImagePickerControllerSourceTypePhotoLibrary;
+        photoPicker.delegate=self;
+        [self presentViewController:photoPicker animated:YES completion:nil];
+        }
+        else
+        {
+            UIAlertView *alertview=[[UIAlertView alloc]initWithTitle:@"警告" message:@"该设备不支持相册选择照片" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+            [alertview show];
+        }
+        
+    }
+}
+
+
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 { [picker dismissViewControllerAnimated:YES completion:^(){
     _familyImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
@@ -83,48 +109,62 @@
     //NSString *num = [[NSString alloc] initWithFormat:@"%d",i];
     NSString *imageName=[NSString stringWithFormat:@"image%d",i];
     [self saveImage:_familyImage withName:imageName];
-    
+    NSLog(@"imageName=%@",imageName);
     //NSString *fullPath = [[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"] stringByAppendingPathComponent:imageName];
     //将数据插入数据库
     //获取数据库文件路径
+    
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSLog(@"%@",documentsDirectory);
-    self.databaseFilePath = [documentsDirectory stringByAppendingPathComponent:kDatabaseName];
-    //打开数据库
-    sqlite3 *database;
-    if (sqlite3_open([self.databaseFilePath UTF8String], &database)
-        != SQLITE_OK) {
-        sqlite3_close(database);
-        NSAssert(0, @"打开数据库失败！");
+    //NSString *documentsDirectory = [paths lastObject];
+//    NSLog(@"%@",documentsDirectory);
+    NSString *fileName=[[paths lastObject]stringByAppendingPathComponent:@"family.sqilte"];
+    _db=[FMDatabase databaseWithPath:fileName];
+    
+    if([_db open])
+    {
+        NSLog(@"打开数据库成功!");
     }
-    char *update = "INSERT INTO photo (photourl) VALUES (?);";
-
-    sqlite3_stmt *stmt;
-
-            if (sqlite3_prepare_v2(database, update, -1, &stmt, nil) == SQLITE_OK) {
-                //sqlite3_bind_text(stmt, 1, [num UTF8String],-1,NULL);
-                sqlite3_bind_text(stmt, 1, [imageName UTF8String], -1, NULL);
-            }
-    if (sqlite3_step(stmt) != SQLITE_DONE) {
-        NSAssert(0, @"插入数据失败！");
-        sqlite3_finalize(stmt);
-    }
+    [_db executeUpdate:@"insert into t_photo(headImage) values(?);",imageName];
+    //[_imageTable clearsContextBeforeDrawing];
     //插入数据后重新获取数据库中的图片数据.
+    [_images removeAllObjects];
     [self getHeadImage];
     //[_images addObject:fullPath];
     [_imageTable reloadData];
+        [_db close];
     
-    sqlite3_finalize(stmt);
-    
-    //关闭数据库
-    sqlite3_close(database);
-    
-    
-    //UIImage *savedImage = [[UIImage alloc] initWithContentsOfFile:fullPath];
-
 }];
     //[_images addObject:portraitImg];
+}
+#pragma imagePickerController delegate
+- (BOOL) doesCameraSupportTakingPhotos {
+    return [self cameraSupportsMedia:(__bridge NSString *)kUTTypeImage sourceType:UIImagePickerControllerSourceTypeCamera];
+}
+//相机是否可用
+- (BOOL) isCameraAvailable{
+    return [UIImagePickerController isSourceTypeAvailable:
+            UIImagePickerControllerSourceTypeCamera];
+}
+//相册是否可用
+- (BOOL) isPhotoLibraryAvailable{
+    return [UIImagePickerController isSourceTypeAvailable:
+            UIImagePickerControllerSourceTypePhotoLibrary];
+}
+- (BOOL)cameraSupportsMedia:(NSString *)paramMediaType sourceType:(UIImagePickerControllerSourceType)paramSourceType{
+    __block BOOL result = NO;
+    if ([paramMediaType length] == 0){ NSLog(@"Media type is empty."); return NO;
+    }
+    NSArray *availableMediaTypes =
+    [UIImagePickerController
+     availableMediaTypesForSourceType:paramSourceType];
+    [availableMediaTypes enumerateObjectsUsingBlock:
+     ^(id obj, NSUInteger idx, BOOL *stop) {
+         NSString *mediaType = (NSString *)obj;
+         if ([mediaType isEqualToString:paramMediaType]){
+             result = YES;
+             *stop= YES; }
+     }];
+    return result;
 }
 
 #pragma mark - 保存图片至沙盒
@@ -143,6 +183,42 @@
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     [self dismissViewControllerAnimated:YES completion:^{}];
+}
+
+#pragma tableview delegate
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //删除操作
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *fileName=[[paths lastObject]stringByAppendingPathComponent:@"family.sqilte"];
+        _db=[FMDatabase databaseWithPath:fileName];
+        if([_db open])
+        {
+            NSLog(@"数据库打开成功!");
+        }
+        NSString *imageName=[@"image" stringByAppendingString:[[_images[indexPath.row] componentsSeparatedByString:@"image"]lastObject]];
+        NSLog(@"imageName=%@",imageName);
+        FMResultSet *set=[_db executeQuery:@"select *from t_photo where headImage=?;",imageName];
+        while ([set next]) {
+            NSString *headImage=[set objectForColumnName:@"headImage"];
+            [_db executeUpdate:@"delete from t_photo where headImage=?;",headImage];
+        }
+        
+        //[_imageTable reloadData];
+        [_db close];
+        
+        [_images removeObjectAtIndex:indexPath.row];
+        // Delete the row from the data source.
+        [_imageTable deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
+
+    }
+}
+-(NSString*)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"确认删除?";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

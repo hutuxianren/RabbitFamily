@@ -23,8 +23,10 @@
 		F66ACC621B80B6A100E1F3E4 /* haiquanFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC611B80B6A100E1F3E4 /* haiquanFirstTableViewController.m */; };
 		F66ACC651B80BD0900E1F3E4 /* xuzibeiTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC641B80BD0900E1F3E4 /* xuzibeiTableViewController.m */; };
 		F66ACC681B80CD0E00E1F3E4 /* genshenghoudaiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */; };
+		F67865521B9F0A3B007FD8EB /* Global.m in Sources */ = {isa = PBXBuildFile; fileRef = F67865511B9F0A3B007FD8EB /* Global.m */; };
 		F67A33AC1B8AF78E00BA2A96 /* FamilyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */; };
 		F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F68459B11B85DDD700C7F57A /* RegisterViewController.m */; };
+		F68AEBD41BA00ACF002E5026 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F68AEBD31BA00ACF002E5026 /* MobileCoreServices.framework */; };
 		F69810771B9695FF00878FE6 /* FMDBTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F69810761B9695FF00878FE6 /* FMDBTestViewController.m */; };
 		F6A3904A1B85B0C3004BD575 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F6A390491B85B0C3004BD575 /* LoginViewController.m */; };
 		F6AD782C1B8AFDFB00469596 /* PhotoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F6AD782B1B8AFDFB00469596 /* PhotoViewCell.m */; };
@@ -108,10 +110,13 @@
 		F66ACC661B80CD0E00E1F3E4 /* genshenghoudaiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = genshenghoudaiViewController.h; sourceTree = "<group>"; };
 		F66ACC671B80CD0E00E1F3E4 /* genshenghoudaiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = genshenghoudaiViewController.m; sourceTree = "<group>"; };
 		F67418FC1B91889200570222 /* database.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = database.sqlite3; path = ../database.sqlite3; sourceTree = "<group>"; };
+		F67865501B9F0A3B007FD8EB /* Global.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Global.h; sourceTree = "<group>"; };
+		F67865511B9F0A3B007FD8EB /* Global.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Global.m; sourceTree = "<group>"; };
 		F67A33AA1B8AF78E00BA2A96 /* FamilyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyPhotoViewController.h; sourceTree = "<group>"; };
 		F67A33AB1B8AF78E00BA2A96 /* FamilyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyPhotoViewController.m; sourceTree = "<group>"; };
 		F68459B01B85DDD700C7F57A /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		F68459B11B85DDD700C7F57A /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		F68AEBD31BA00ACF002E5026 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F69810751B9695FF00878FE6 /* FMDBTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDBTestViewController.h; sourceTree = "<group>"; };
 		F69810761B9695FF00878FE6 /* FMDBTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDBTestViewController.m; sourceTree = "<group>"; };
 		F6A390481B85B0C3004BD575 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -175,6 +180,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F68AEBD41BA00ACF002E5026 /* MobileCoreServices.framework in Frameworks */,
 				F6E54CDF1B84B66B005004F0 /* libsqlite3.0.dylib in Frameworks */,
 				F6B913A61B83553C00FE41B6 /* Security.framework in Frameworks */,
 				F6B913A41B83553200FE41B6 /* libz.1.2.5.dylib in Frameworks */,
@@ -214,6 +220,7 @@
 		51BD6C24D1DEC7517E6EFACB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F68AEBD31BA00ACF002E5026 /* MobileCoreServices.framework */,
 				A4921142B766AB984271F764 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -251,6 +258,7 @@
 		F66ACC1F1B8074AB00E1F3E4 /* RabbitFamily */ = {
 			isa = PBXGroup;
 			children = (
+				F678654F1B9F09DD007FD8EB /* Global */,
 				F630B36A1B91D42E00B38930 /* Models */,
 				F66ACC491B80759000E1F3E4 /* Controller */,
 				F66ACC591B80816E00E1F3E4 /* view */,
@@ -347,6 +355,15 @@
 			);
 			name = others;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		F678654F1B9F09DD007FD8EB /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				F67865501B9F0A3B007FD8EB /* Global.h */,
+				F67865511B9F0A3B007FD8EB /* Global.m */,
+			);
+			name = Global;
 			sourceTree = "<group>";
 		};
 		F69F6D371B857C6900CA5873 /* Resources */ = {
@@ -625,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F67865521B9F0A3B007FD8EB /* Global.m in Sources */,
 				F68459B21B85DDD700C7F57A /* RegisterViewController.m in Sources */,
 				F69810771B9695FF00878FE6 /* FMDBTestViewController.m in Sources */,
 				F6AD784C1B8B2E7000469596 /* TWPhotoPickerController.m in Sources */,
